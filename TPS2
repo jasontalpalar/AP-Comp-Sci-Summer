@@ -1,0 +1,47 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package tps2;
+
+import java.util.Random;
+
+/**
+ *
+ * @author Jason
+ */
+public class TPS2 {
+    
+    
+    static int[] junkArea(int z[]) {
+        final int ARRAY_SIZE = 10;
+        int c[];
+        c = new int[ARRAY_SIZE];
+        
+        Random myRand = new Random();
+            int rN = 0;
+        for(int s = 0; s < c.length; s++) {
+            rN = myRand.nextInt() % 100;
+            c[s] = rN;
+        }
+        
+        System.out.println("c[1] is " + c[1]);
+        System.out.println("c[9] is " + c[9]);
+        
+        int x[] = new int[c.length * 2];
+        System.arraycopy(c,0,x,0,c.length);
+        
+        return c;
+    }
+    
+    public static void main(String[] args) {
+        int myint[] = {5,3,45,67,12,81,97,109,11,6};
+        int x[] = new int[10];
+        x = junkArea(myint);
+        System.out.println("length of x: " + x.length);
+        System.out.println("x[1] is: " + x[1]);
+        System.out.println("x[9] is: " + x[9]);
+    }
+    
+}
