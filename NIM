@@ -91,7 +91,6 @@ public class NIM extends JPanel implements  ActionListener, MouseMotionListener,
         }
           for(int i = 0; i < fake.size(); i++) {
             Rock r = (Rock) fake.get(i);
-            //g.fillOval(r.getX(), r.getY(),r.getW(),r.getH());
         }
         rocky1 += 80;
         rocky2 += 80;
@@ -113,7 +112,6 @@ public class NIM extends JPanel implements  ActionListener, MouseMotionListener,
             Rock r = new Rock(mousex,mousey,10,10);
             fake.add(r);
         }
-        //g.fillRect(fake.x, fake.y, fake.width, fake.height);
         
         for(int i = 0; i < rock1.size(); i++) {
             for(int p = 0; p < fake.size(); p++) {
@@ -184,7 +182,6 @@ public class NIM extends JPanel implements  ActionListener, MouseMotionListener,
                 }
             }
         }
-        //finalcounter = counter1 + counter2 + counter3;
     }
     
     @Override
