@@ -1,0 +1,164 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package sort.comparison;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.Scanner;
+
+/**
+ *
+ * @author Jason
+ */
+public class SortComparison1 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) throws FileNotFoundException, IOException {
+        int x1[] = new int[10000];
+        int x2[] = new int[10000];
+        Scanner s1 = new Scanner(new File("/Users/Jason/Documents/SortComparison1.txt"));
+        
+        for(int i = 0; i < 10000; i++){
+            int temp = s1.nextInt();
+            x1[i] = temp;
+        }
+        long start = 0, end = 0, diff = 0;
+        start = System.currentTimeMillis();
+        Arrays.sort(x1);
+        end = System.currentTimeMillis();
+        diff = end - start;
+        System.out.println("Integers: " + diff + " ms");
+        
+        start = System.currentTimeMillis();
+        for(int i = 0; i < 10000; i++){
+            for(int p = 0; p < 9999; p++){
+                if (x2[p] > x2[p+1]){
+                    int temp = x2[p];
+                    x2[p] = x2[p+1];
+                    x2[p+1] = temp;
+                }
+            }
+        }
+        end = System.currentTimeMillis();
+        diff = end - start;
+        System.out.println("Integers: " + diff + " ms");
+        
+        SortComparison2.main(args);
+        SortComparison3.main(args);
+    }
+    
+}
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package sort.comparison;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+
+/**
+ *
+ * @author Jason
+ */
+public class SortComparison2 {
+    
+    public static void main(String[] args) throws FileNotFoundException, IOException {
+        String x1[] = new String[10000];
+        List<String> x2 = new ArrayList<String>(10000);
+        Scanner s2 = new Scanner(new File("/Users/Jason/Documents/SortComparison2.txt"));
+        FileReader fr = new FileReader(new File("/Users/Jason/Documents/SortComparison2.txt"));
+        BufferedReader br = new BufferedReader(fr);
+        
+        String temp;
+        for(int i = 0; i < 10000; i++){
+            temp = s2.nextLine();
+            x1[i] = temp;
+        }
+        long start = 0, end = 0, diff = 0;
+        start = System.currentTimeMillis();
+        Arrays.sort(x1);
+        end = System.currentTimeMillis();
+        diff = end - start;
+        System.out.println("Strings: " + diff + " ms");
+        
+        start = System.currentTimeMillis();
+        for(int i = 0; i < 10000; i ++) {
+            while ((temp = br.readLine()) != null) {
+                String[] sv = temp.split(" ");
+                    x2.add(sv[i]);
+            }
+        }
+        end = System.currentTimeMillis();
+        diff = end - start;
+        System.out.println("Strings: " + diff + " ms");
+        
+    }
+}
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package sort.comparison;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.Scanner;
+
+/**
+ *
+ * @author Jason
+ */
+public class SortComparison3 {
+    
+    public static void main(String[] args) throws FileNotFoundException {
+        double x1[] = new double[10000];
+        double x2[] = new double[10000];
+        Scanner s3 = new Scanner(new File("/Users/Jason/Documents/SortComparison3.txt"));
+        
+        for(int i = 0; i < 10000; i++){
+            double temp = s3.nextDouble();
+            x1[i] = temp;
+        }
+        long start = 0, end = 0, diff = 0;
+        start = System.currentTimeMillis();
+        Arrays.sort(x1);
+        end = System.currentTimeMillis();
+        diff = end - start;
+        System.out.println("Doubles: " + diff + " ms");
+        
+        start = System.currentTimeMillis();
+        for(int i = 0; i < 10000; i++){
+            for(int p = 0; p < 9999; p++){
+                if (x2[p] > x2[p+1]){
+                    double temp = x2[p];
+                    x2[p] = x2[p+1];
+                    x2[p+1] = temp;
+                }
+            }
+        }
+        end = System.currentTimeMillis();
+        diff = end - start;
+        System.out.println("Doubles: " + diff + " ms");
+        
+    }
+}
