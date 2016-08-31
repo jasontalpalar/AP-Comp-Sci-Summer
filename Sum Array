@@ -1,0 +1,104 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package sum.array;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Jason
+ */
+public class SumArray {
+static int sum1 = 0;
+static int sum2 = 0;
+static int sum3 = 0;
+static int sum4 = 0;
+static int sum5 = 0;
+static double sum6 = 0;
+static double sum7 = 0;
+static double sum8 = 0;
+static double sum9 = 0;
+static double sum10 = 0;
+    public static void ProcessInt(int myInt[][], Scanner sc) {
+        for(int i = 0; i < myInt[0].length; i++) {
+            myInt[0][i] = sc.nextInt();
+            sum1 += myInt[0][i];
+        }
+        for(int i = 0; i < myInt[1].length; i++) {
+            myInt[1][i] = sc.nextInt();
+            sum2 += myInt[1][i];
+        }
+        for(int i = 0; i < myInt[2].length; i++) {
+            myInt[2][i] = sc.nextInt();
+            sum3 += myInt[2][i];
+        }
+        for(int i = 0; i < myInt[3].length; i++) {
+            myInt[3][i] = sc.nextInt();
+            sum4 += myInt[3][i];
+        }
+        for(int i = 0; i < myInt[4].length; i++) {
+            myInt[4][i] = sc.nextInt();
+            sum5 += myInt[4][i];
+        }
+    }
+    
+    public static void ProcessDouble(double myDouble[][], Scanner sc) {
+        for(int i = 0; i < myDouble[0].length; i++) {
+            myDouble[0][i] = sc.nextDouble();
+            sum6 += myDouble[0][i];
+        }
+        for(int i = 0; i < myDouble[1].length; i++) {
+            myDouble[1][i] = sc.nextDouble();
+            sum7 += myDouble[1][i];
+        }
+        for(int i = 0; i < myDouble[2].length; i++) {
+            myDouble[2][i] = sc.nextDouble();
+            sum8 += myDouble[2][i];
+        }
+        for(int i = 0; i < myDouble[3].length; i++) {
+            myDouble[3][i] = sc.nextDouble();
+            sum9 += myDouble[3][i];
+        }
+        for(int i = 0; i < myDouble[4].length; i++) {
+            myDouble[4][i] = sc.nextDouble();
+            sum10 += myDouble[4][i];
+        }
+    }
+    
+    public static void main(String[] args) {
+        int myInt[][] = new int[5][4];
+        double myDouble[][] = new double[5][4];
+        Scanner sc = new Scanner(System.in);
+        SumArray a = new SumArray();
+        
+        System.out.println("Populate the 5x4 integer array by using the space bar to separate numbers\n(press enter for next row). Any excess numbers will not be processed: ");
+        a.ProcessInt(myInt,sc);
+        System.out.println("Integer Array: ");
+        System.out.println("Row 1 = " + sum1);
+        System.out.println("Row 2 = " + sum2);
+        System.out.println("Row 3 = " + sum3);
+        System.out.println("Row 4 = " + sum4);
+        System.out.println("Row 5 = " + sum5);
+        System.out.println("SUM = " + (sum1 + sum2 + sum3 + sum4 + sum5));
+        System.out.println("AVG = " + (sum1 + sum2 + sum3 + sum4 + sum5)/20.0);
+        
+        System.out.println("\nPopulate the 5x4 double array by using the space bar to separate numbers\n(press enter for next row). Any excess numbers will not be processed: ");
+        a.ProcessDouble(myDouble,sc);
+        System.out.println("Double Array: ");
+        System.out.println("Row 1 = " + sum6);
+        System.out.println("Row 2 = " + sum7);
+        System.out.println("Row 3 = " + sum8);
+        System.out.println("Row 4 = " + sum9);
+        System.out.println("Row 5 = " + sum10);
+        System.out.println("SUM = " + (sum6 + sum7 + sum8 + sum9 + sum10));
+        System.out.println("AVG = " + (sum6 + sum7 + sum8 + sum9 + sum10)/20);
+        
+        System.out.println("Populate an integer array (enter 0 to continue to the next row and -1 to finish): ");
+        
+        
+    }        
+    
+}
