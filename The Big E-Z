@@ -1,0 +1,47 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package the.big.e.z;
+
+import java.text.DecimalFormat;
+
+/**
+ *
+ * @author Jason
+ */
+public class TheBigEZ {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        int counterN = 0;
+        double counterNn = 0.0;
+        double b,b3;
+        String b2;
+        double sum;
+        DecimalFormat df = new DecimalFormat("#0.0");
+        for(int i = 0; i < 1000; i++) {
+            for(sum = 0; sum <= 2.0; sum += b3) {
+                b = Math.random();
+                b2 = df.format(b);
+                b3 = Double.parseDouble(b2);
+                System.out.print(b3 + "   ");
+                sum += b3;
+                counterN++;
+            }
+            if(sum > 1) {
+                System.out.println("\nN = " + counterN);
+                counterNn += counterN;
+                counterN = 0;
+                
+            }
+            
+        }
+        System.out.println("AVG: " + counterNn/1000.0);
+               
+    }
+    
+}
