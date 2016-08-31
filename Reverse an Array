@@ -1,0 +1,39 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package reverse.an.array;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+/**
+ *
+ * @author Jason
+ */
+public class ReverseAnArray {
+    
+    public static void main(String[] args) {
+        ArrayList<Integer> array = new ArrayList<Integer>();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Populate the array using enter to separate numbers (type 00 to stop): ");
+        for(int i = 0; i >= 0; i++) {
+            int nums = sc.nextInt();
+            array.add(nums);
+            if(nums == 00) {
+                System.out.println("\nEntered: ");
+                for(int x = 0; x < array.size()-1; x++) {
+                    System.out.print(array.get(x) + " ");
+                }
+                System.out.println("\nReversed: ");
+                for (int x = array.size()-2; x >= 0; x--) {
+                    System.out.print(array.get(x) + " ");
+                }
+                break;
+            }
+        }
+        
+    }
+
+}
