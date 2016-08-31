@@ -1,0 +1,107 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package student.grades;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.Scanner;
+
+/**
+ *
+ * @author Jason
+ */
+public class StudentGrades {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) throws FileNotFoundException {
+        Scanner sc = new Scanner(new File("/Users/Jason/Documents/Grades.txt"));
+        Student students[] = new Student[25];
+        int counter = 0;
+        while(sc.hasNextLine()) {
+            String temp = sc.nextLine();
+            students[counter] = new Student(temp);
+            counter++;
+        }
+        students = asort(students,counter);
+        for (int i = 0; i<counter; i++){
+            System.out.println(students[i]);
+        }
+    }
+    
+    public static Student[]sort(Student[]max, int counter) {
+        for(int i = 0; i < counter; i++){
+            for(int p = 0; p < counter - 1; p++){
+                if (max[p].getAverage() > max[p+1].getAverage()){
+                    Student temp = max[p];
+                    max[p] = max[p+1];
+                    max[p+1] = temp;
+                }
+            }
+        }
+          return max;  
+    }
+    
+    public static Student[]asort(Student[]dave, int counter){
+        Arrays.sort(dave,0,counter);
+        return dave;
+    }
+}
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package student.grades;
+
+import java.util.StringTokenizer;
+
+/**
+ *
+ * @author Jason
+ */
+public class Student implements Comparable {
+    private String name;
+    private double avg;
+    
+    public Student(String text) {
+        StringTokenizer s = new StringTokenizer(text," ");
+        name = s.nextToken();
+        avg = 0;
+        avg += Double.parseDouble(s.nextToken());
+        avg += Double.parseDouble(s.nextToken());
+        avg += Double.parseDouble(s.nextToken());
+        avg += Double.parseDouble(s.nextToken());
+        avg += Double.parseDouble(s.nextToken());
+        avg /= 5;
+    }
+    
+    public String getName() {
+        return name;
+    }
+    
+    public double getAverage() {
+        return avg;
+    }
+    
+    @Override
+    public String toString() {
+        return name + " " + avg;
+    }
+    
+    @Override
+    public int compareTo(Object student) {
+        Student bill = (Student)student;
+        return (int) Math.signum(this.getAverage() - bill.getAverage());
+        
+    }
+}
+
+
+
