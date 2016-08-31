@@ -1,0 +1,63 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package tps4;
+
+/**
+ *
+ * @author Jason
+ */
+public class TPS4 {
+int c1,c2,c3,c4;
+
+    public void function1(int arrayint1[]) {
+        for(c1 = 0; c1 < (arrayint1.length - 1); c1++) {
+            for(c2 = (c1 + 1); c2 < arrayint1.length; c2++) {
+                if(arrayint1[c1] > arrayint1[c2]) {
+                    int temp = arrayint1[c1];
+                    arrayint1[c1] = arrayint1[c2];
+                    arrayint1[c2] = temp;
+                }
+            }
+        }
+    }
+    
+    public void function2(String arrayString1[]) {
+        for(c3 = 0; c3 < (arrayString1.length - 1); c3++) {
+            for(c4 = (c3 + 1); c4 < arrayString1.length; c4++) {
+                if(arrayString1[c3].compareTo(arrayString1[c4]) > 0) {
+                    String temp2 = arrayString1[c3];
+                    arrayString1[c3] = arrayString1[c4];
+                    arrayString1[c4] = temp2;
+                }
+            }
+        }
+    }
+    
+    public void printArray1(int arrayint1[]) {
+      for(int i = 0; i < arrayint1.length; i++)
+        System.out.print(arrayint1[i] + " ");
+   }
+    
+    public void printArray2(String arrayString1[]) {
+      for(int i = 0; i < arrayString1.length; i++)
+        System.out.print(arrayString1[i] + " ");
+   }
+    
+    
+    public static void main(String[] args) {
+        TPS4 a = new TPS4();
+        int arrayint[] = {1,5,4,2,3};
+        String arrayString[] = {"baseball","football","basketball","soccer"};
+        a.function1(arrayint);
+        a.function2(arrayString);
+        a.printArray1(arrayint);
+        System.out.println();
+        a.printArray2(arrayString);
+        
+        
+    }
+    
+}
