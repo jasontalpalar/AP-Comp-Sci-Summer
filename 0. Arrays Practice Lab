@@ -13,31 +13,33 @@ import java.util.Random;
  */
 public class ArraysPracticeLab {
 
-    public static void ProcessPrimitive(int myPrimitive[]) {
+    public static void ProcessPrimitive(int myPrimitive[], int a) {
         Random myRand = new Random();
         int rN = myRand.nextInt() % 100;
-        myPrimitive[0] += rN;
+        a += rN;
+        return;
     }
-    public static void ProcessMutable(StringBuffer myMutable[]) {
-        String append = " #1";
-        myMutable[0].append(append);
+    public static void ProcessMutable(StringBuffer myMutable[], StringBuffer a) {
+        a.append(" #1");
+        return;
     }
-    public static void ProcessImmutable(String myImmutable[]) {
-        String concat = " are the best";
-        myImmutable[0].concat(concat);
+    public static void ProcessImmutable(String myImmutable[], String a) {
+        a.concat(" are the best");
+        return;
     }
-    public static void ChangeElement(int myPrimitive[]) {
-        Random myRand2 = new Random();
-        int rN2 = myRand2.nextInt() % 100;
-        myPrimitive[0] += rN2;
+    public static void ChangeElement(int a) {
+        Random myRand = new Random();
+        int rN = myRand.nextInt() % 100;
+        a += rN;
+        return;
     }
-    public static void ChangeElement(StringBuffer myMutable0) {
-        String append2 = " !!!!!";
-        myMutable0.append(append2);
+    public static void ChangeElement(StringBuffer a) {
+        a.append(" !!!!!");
+        return;
     }
-    public static void ChangeElement(String myImmutable0) {
-        String concat2 = " team ever!";
-        myImmutable0.concat(concat2);
+    public static void ChangeElement(String a) {
+        a.concat(" are the best");
+        return;
     }
     
     public static void main(String[] args) {
@@ -48,21 +50,20 @@ public class ArraysPracticeLab {
         myMutable[2] = new StringBuffer("monkey");
         String myImmutable[] = {"Redskins","Giants","Eagles","Cowboys"};
                 
-        ArraysPracticeLab a = new ArraysPracticeLab();
         System.out.println("myPrimitive[0] Before: " + myPrimitive[0]);
-        a.ProcessPrimitive(myPrimitive);
+        ProcessPrimitive(myPrimitive,myPrimitive[0]);
         System.out.println("myPrimitive[0] After: " + myPrimitive[0]);
-        a.ChangeElement(myPrimitive);
+        ChangeElement(myPrimitive[0]);
         System.out.println("myPrimitive[0] End: " + myPrimitive[0]);
         System.out.println("myMutable[0] Before: " + myMutable[0]);
-        a.ProcessMutable(myMutable);
+        ProcessMutable(myMutable,myMutable[0]);
         System.out.println("myMutable[0] After: " + myMutable[0]);
-        a.ChangeElement(myMutable[0]);
+        ChangeElement(myMutable[0]);
         System.out.println("myMutable[0] End: " + myMutable[0]);
         System.out.println("myImmutable[0] Before: " + myImmutable[0]);
-        a.ProcessImmutable(myImmutable);
+        ProcessImmutable(myImmutable,myImmutable[0]);
         System.out.println("myImmutable[0] After: " + myImmutable[0]);        
-        a.ChangeElement(myImmutable[0]);
+        ChangeElement(myImmutable[0]);
         System.out.println("myImmutable[0] End: " + myImmutable[0]);        
         
     }
